@@ -20,5 +20,6 @@ from registration import views as regView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', regView.register, name="register"),
-    path('', include("Inventory.urls"))
+    path('', include("Inventory.urls")),
+    path('', include("django.contrib.auth.urls")),
 ]
