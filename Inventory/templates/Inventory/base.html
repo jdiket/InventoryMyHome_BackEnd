@@ -44,6 +44,7 @@
         <a href="/">Home</a>
         <a href="/lists">View Lists</a>
         <a href="/create">Create New List</a>
+		<a href="/login">Login</a>
 		<a href="/register">Register a New User</a>
     </div>
     
@@ -52,13 +53,11 @@
             <div class="col-8">
                 <h1 class="mt-2">Inventory My Home</h1>
                 <hr class="mt-0 mb-4">
-				{% if user.is_authenticated %}
-					{% block content %}
-					<p>Base Template</p>
-					{% endblock %}
-				{% else %}
-					<a href="/login">Login Here</a>
-				{% endif %}
+				
+				{% block content %}
+				<p>Base Template</p>
+				{% endblock %}
+				
             </div>
         </div>
     </div>

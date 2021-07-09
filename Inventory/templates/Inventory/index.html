@@ -3,7 +3,7 @@
 {% block content %}
 
     <ul>
-        {% for lists in ls %}
+        {% for lists in user.inventorylist.all %}
 
             <li><h1><a href="/lists/{{ lists.id }}">{{ lists.name }}</a></h1></li>
 

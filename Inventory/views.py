@@ -9,8 +9,8 @@ def index(request):
     return render(request, "Inventory/base.html", {})
 
 def lists(request):
-    ls = InventoryList.objects.all()
-    return render(request, "Inventory/index.html", {"ls": ls})
+    # ls = InventoryList.objects.all()
+    return render(request, "Inventory/index.html", {})
 
 def detail_list(response, id):
     ls = InventoryList.objects.get(id=id)
@@ -30,6 +30,7 @@ def create(response):
             n = form.cleaned_data["name"]
             t = InventoryList(name=n)
             t.save()
+            response.user.inventorylist.add(t)
 
         return HttpResponseRedirect('lists/%i' %t.id)
     else:
