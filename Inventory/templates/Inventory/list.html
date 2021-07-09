@@ -2,16 +2,41 @@
 
 {% block content %}
 
-<h1>{{ list.name }}</h1>
+    <h1>{{ list.name }}</h1>
 
-    <ul>
-        {% for item in list.item_set.all %}
+    <form method="post" action="#">
+        {% csrf_token %}
 
-            <li>{{ item.name }}</li>
+        <table>
+            <thead>
+                <tr>
+                    <th>Item Name</th>
+                    <th>Serial Number</th>
+                    <th>Location</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in list.item_set.all %}
+                    <tr>
+                        <td>{{ item.name }}</td>
+                        <td>{{ item.serial }}</td>
+                        <td>{{ item.location }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
 
-        {% endfor %}
-    </ul>
+                    <tr>
+                        <td><input type="text" name="name" /></td>
+                        <td><input type="text" name="serial" /></td>
+                        <td><input type="text" name="location" /></td>
+                        <td><button type="submit" name="submit" value="new_item">Add New Item</button></td>
+                    </tr>
+            </tbody>
+        </table>
 
-    
+        
+
+    </form>
 
 {% endblock %}
