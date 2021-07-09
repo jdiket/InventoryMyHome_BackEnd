@@ -52,9 +52,13 @@
             <div class="col-8">
                 <h1 class="mt-2">Inventory My Home</h1>
                 <hr class="mt-0 mb-4">
-                {% block content %}
-                <p>Base Template</p>
-                {% endblock %}
+				{% if user.is_authenticated %}
+					{% block content %}
+					<p>Base Template</p>
+					{% endblock %}
+				{% else %}
+					<a href="/login">Login Here</a>
+				{% endif %}
             </div>
         </div>
     </div>
