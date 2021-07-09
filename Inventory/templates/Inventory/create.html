@@ -2,10 +2,14 @@
 
 {% block content %}
 
-    <form method="post" action="/create">
+    <h3>Add a New List</h3>
+
+    <form method="post" action="/create" class="form-group">
         {% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" name="submit">Create New List</button>
+        <div class="input-group mb-3">
+            {{ form.name }}
+            <button type="submit" name="submit" class="btn btn-success">Create New List</button>
+        </div>
     </form>
 
 {% endblock %}
