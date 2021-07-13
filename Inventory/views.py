@@ -31,8 +31,10 @@ def detail_list(response, id):
                 date_purchased=_date_purchased
             )
 
-        
-
+        # The following is not functional, but is hopefully how a delete method would work
+        # if response.method == "DELETE":
+        #     get the item.id
+        #     Item.objects.get(pk=id).delete()
 
         return render(response, "Inventory/list.html", {"list": ls})
 
@@ -52,5 +54,4 @@ def create(response):
     else:
         form = CreateNewList()
 
-    
     return render(response, "Inventory/create.html", {"form": form})
