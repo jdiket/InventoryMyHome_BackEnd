@@ -35,8 +35,8 @@ def create(response):
             t = InventoryList(name=n)
             t.save()
             response.user.inventorylist.add(t)
-
         return HttpResponseRedirect('lists/%i' %t.id)
+
     else:
         form = CreateNewList()
 
