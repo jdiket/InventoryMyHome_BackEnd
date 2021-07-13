@@ -20,8 +20,16 @@ def detail_list(response, id):
         if response.method == "POST":
             _name = response.POST.get("name")
             _serial = response.POST.get("serial")
-            _location = response.POST.get("location")
-            ls.item_set.create(name=_name, serial=_serial, location=_location)
+            _where_purchased = response.POST.get("where_purchased")
+            _purchase_amount = response.POST.get("purchase_amount")
+            _date_purchased = response.POST.get("date_purchased")
+            ls.item_set.create(
+                name=_name, 
+                serial=_serial, 
+                where_purchased=_where_purchased, 
+                purchase_amount=_purchase_amount, 
+                date_purchased=_date_purchased
+            )
 
         return render(response, "Inventory/list.html", {"list": ls})
 
