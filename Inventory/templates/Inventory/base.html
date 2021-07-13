@@ -8,7 +8,7 @@
     <style type="text/css">
 		.sidenav {
 			height:100%;
-			width:160px;
+			width:200px;
 			position: fixed;
 			z-index:1;
 			top:0;
@@ -31,7 +31,7 @@
 		}	
  
 		.main{
-			margin-left:160px;
+			margin-left:200px;
 			padding: 0px 10px;
 		}
  
@@ -45,7 +45,7 @@
         <a href="/lists">View Lists</a>
         <a href="/create">Create New List</a>
 		<a href="/login">Login</a>
-		<a href="/register">Register a New User</a>
+		<a href="/register">Register a New Account</a>
     </div>
     
     <div id="content" name="content" class="main">
@@ -55,7 +55,18 @@
                 <hr class="mt-0 mb-4">
 				
 				{% block content %}
-				<p>Base Template</p>
+				
+				<h3>Welcome to Inventory My Home!</h3>
+				<p>The purpose of this service is to give you an easy and convenient way to keep track of all the things in your life we accumulate over time.</p>
+				<p>A few years ago, my home was broken in to and one of the hardest questions to answser was, "What's missing?"  There were obvious things that are easy to notice, but then for several of those, mainly electronics, I then had to file claims that needed paperwork with my insurance company.  I didn't have serial numbers and I hadn't kept receipts, so instead I had to play detective and track down that information in credit card histories and email receipts.  Couldn't this be easier?</p>
+
+				<h4>Yes!</h4>
+				<p>Inventory My Home's purpose is to make that process simple, by giving you a place to save that information so you can reference it later.  We all forget, we all don't realize when a piece of information might be needed, so why not take the stress out of it and keep things simple?</p>
+
+				<h3>Getting Started</h3>
+				<p>On the page sidebar, find the link to Create a New Account and click out.  Fill out the information to create your account and then login.  Once you've logged in to your account simple Create a New List and begin adding items.  While very simple right now, we will be continuall updating our system to have a better user experience and allow you to add as much information as you'd like to your lists.</p>
+
+
 				{% endblock %}
 				
             </div>
