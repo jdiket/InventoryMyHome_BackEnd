@@ -1,1 +1,1 @@
-web: waitress-serve --port=$PORT InventoryMyHome.wsgi:application
+web: gunicorn InventoryMyHome.wsgi
