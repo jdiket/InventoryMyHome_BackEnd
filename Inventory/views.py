@@ -15,13 +15,17 @@ def lists(request):
 def detail_list(response, id):
     ls = InventoryList.objects.get(id=id)
 
-    if response.method == "POST":
-        _name = response.POST.get("name")
-        _serial = response.POST.get("serial")
-        _location = response.POST.get("location")
-        ls.item_set.create(name=_name, serial=_serial, location=_location)
+    if ls in response.user.inventorylist.all():
 
-    return render(response, "Inventory/list.html", {"list": ls})
+        if response.method == "POST":
+            _name = response.POST.get("name")
+            _serial = response.POST.get("serial")
+            _location = response.POST.get("location")
+            ls.item_set.create(name=_name, serial=_serial, location=_location)
+
+        return render(response, "Inventory/list.html", {"list": ls})
+
+    return render(response, "Inventory/base.html", {})
 
 def create(response):
     if response.method == "POST":
