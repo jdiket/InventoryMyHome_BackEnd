@@ -4,20 +4,22 @@
 
     <h1>{{ list.name }}</h1>
 
-    <form method="post" action="#">
-        {% csrf_token %}
+    
 
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Item Name</th>
-                    <th>Serial Number</th>
-                    <th>Purchased Where?</th>
-                    <th>Amount Paid</th>
-                    <th>Date Purchased</th>
-                    <th></th>
-                </tr>
-            </thead>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Serial Number</th>
+                <th>Purchased Where?</th>
+                <th>Amount Paid</th>
+                <th>Date Purchased</th>
+                <th></th>
+            </tr>
+        </thead>
+
+        <form method="delete" action="#">
+            {% csrf_token %}
             <tbody>
                 {% for item in list.item_set.all %}
                     <tr>
@@ -26,12 +28,15 @@
                         <td>{{ item.where_purchased }}</td>
                         <td>{{ item.purchase_amount }}</td>
                         <td>{{ item.date_purchased }}</td>
-                        <td></td>
+                        <td><button type="submit" name="delete" value="{{ item.id }}" class="btn btn-danger btn-sm">X</button></td>
+                        <!-- The above does not work, but is currently there for placeholder and further development -->
                     </tr>
                 {% endfor %}
+        </form>
 
-                    <tr>
-                        
+    <form method="post" action="#">
+        {% csrf_token %}
+                    <tr>                        
                         <td>
                             <div class="form-floating mb-3">
                                 <input type="text" name="name" class="form-control" id="nameInput" placeholder="Name"/>
@@ -70,9 +75,6 @@
                     </tr>
             </tbody>
         </table>
-
-        
-
     </form>
 
 {% endblock %}

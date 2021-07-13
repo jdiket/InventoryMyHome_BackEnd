@@ -31,7 +31,11 @@ def detail_list(response, id):
                 date_purchased=_date_purchased
             )
 
+        
+
+
         return render(response, "Inventory/list.html", {"list": ls})
+
 
     return render(response, "Inventory/base.html", {})
 
