@@ -12,7 +12,9 @@
                 <tr>
                     <th>Item Name</th>
                     <th>Serial Number</th>
-                    <th>Location</th>
+                    <th>Purchased Where?</th>
+                    <th>Amount Paid</th>
+                    <th>Date Purchased</th>
                     <th></th>
                 </tr>
             </thead>
@@ -21,7 +23,9 @@
                     <tr>
                         <td>{{ item.name }}</td>
                         <td>{{ item.serial }}</td>
-                        <td>{{ item.location }}</td>
+                        <td>{{ item.where_purchased }}</td>
+                        <td>{{ item.purchase_amount }}</td>
+                        <td>{{ item.date_purchased }}</td>
                         <td></td>
                     </tr>
                 {% endfor %}
@@ -42,8 +46,20 @@
                         </td>
                         <td>
                             <div class="form-floating mb-3">
-                                <input type="text" name="location" class="form-control" id="locationInput" placeholder="Location"/>
-                                <label for="locationInput">Location</label>
+                                <input type="text" name="where_purchased" class="form-control" id="where_purchasedInput" placeholder="Purchased Where?"/>
+                                <label for="where_purchasedInput">Purchased Where?</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <input type="text" name="purchase_amount" class="form-control" id="purchase_amountInput" placeholder="Amount Paid?"/>
+                                <label for="purchase_amountInput">Amount Paid</label>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-floating mb-3">
+                                <input type="date" name="date_purchased" class="form-control" id="date_purchasedInput" placeholder="Date Purchased"/>
+                                <label for="date_purchasedInput">Data Purchased</label>
                             </div>
                         </td>
                         <td>
