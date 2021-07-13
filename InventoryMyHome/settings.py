@@ -78,8 +78,12 @@ WSGI_APPLICATION = 'InventoryMyHome.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd51r74fo6g9pi1',
+        'HOST': 'ec2-3-218-71-191.compute-1.amazonaws.com',
+        'PORT': 5432,
+        'USER': 'tqmevbnyrdxsle',
+        'PASSWORD': '46a1e625baebddc94437f589612bbe9e61ced6c9a402efff7b23bd9396253450',
     }
 }
 
